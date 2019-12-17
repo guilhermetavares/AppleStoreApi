@@ -1,5 +1,8 @@
 build:
-	docker-compose build
+	docker-compose build --no-cache
+
+load:
+	docker-compose run --rm api bash -c "cd /app && python start.py /path/to/data.csv"
 
 up:
 	docker-compose up
