@@ -27,7 +27,7 @@ services:
     build:
       context: .
     volumes:
-      - ./:/var/task
+      - .:/var/app
     ports:
       - "4000:4000"
     environment:

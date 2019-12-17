@@ -1,9 +1,13 @@
-fastapi
-uvicorn
 mongoengine
-
-requests
+pandas
+tqdm
 mongomock
+
+fastapi
+requests
+email-validator
+uvicorn
+
 pytest==4.3.0
 flake8==3.5.0
 pytest-cov==2.6.1
