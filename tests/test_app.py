@@ -10,4 +10,6 @@ def test_load_data(api_client):
     response = api_client.post("/load/", json={'path': 'url_to_csv.csv'})
     assert response.status_code == 500
 
-    
+    response = api_client.post("/load/", json={'path': '/app/AppleStore.csv'})
+    print(response.content)
+    # assert response.status_code == 500
