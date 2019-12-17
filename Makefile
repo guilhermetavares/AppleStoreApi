@@ -1,6 +1,8 @@
 build:
 	docker-compose build
 
+up:
+	docker-compose up
 
 test: ## Run all tests (pytest).
 	@echo "--> Testing on Docker."

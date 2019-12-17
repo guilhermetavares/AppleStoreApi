@@ -4,7 +4,7 @@ services:
     build:
       context: .
     volumes:
-      - ./:/var/task
+      - .:/app
     environment:
       - MONGO_HOST=mongomock://localhost/
       - MONGO_DATABASE=mongoenginetest
