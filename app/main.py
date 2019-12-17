@@ -21,11 +21,10 @@ def load_data(*, path: Path):
     helper = HelperImportClass(path.path)
 
     try:
-        data = helper.dataframe()
+        helper.process()
     except FileNotFoundError:
         return JSONResponse(status_code=500, content={'message': f'FileNotFoundError for {path.path}'})
 
     return {
-        "version": "v1.0.0",
-        "docs": "To see the docs access the url /docs",
+        'message': f'File import correctly for {path.path}',
     }
