@@ -4,6 +4,9 @@ build:
 load:
 	docker-compose run --rm api bash -c "cd /app && python start.py /path/to/data.csv"
 
+down:
+	docker-compose down
+
 up:
 	docker-compose up
 

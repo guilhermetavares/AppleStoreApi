@@ -1,7 +1,7 @@
 from tqdm import tqdm
 import pandas as pd
 
-from .models import Application
+from models import Application
 
 
 class HelperImportClass(object):

@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
 
-from .schemas import Path
-from .import_data import HelperImportClass
+from schemas import Path
+from import_data import HelperImportClass
 
 app = FastAPI()
 
