@@ -4,6 +4,10 @@ build:
 import:
 	docker-compose run --rm api bash -c "python start.py $(url)"
 
+export:
+		docker-compose run -v ${PWD}:/data --rm api python export.py
+		cat app/application.csv > $(path)
+
 down:
 	docker-compose down
 
