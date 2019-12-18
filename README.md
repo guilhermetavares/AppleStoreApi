@@ -46,3 +46,8 @@ curl --request GET --url 'http://0.0.0.0:4000/genres/?limit=1&prime_genre=Music%
 ```
 make test
 ```
+
+6. To export the csv with all data, just run this command and pass the final path file
+```
+make export path=/Users/tavares/Desktop/data.csv
+```
