@@ -36,7 +36,7 @@ def get_prime_genre(prime_genre: str = None, limit: int = None):
 
     params = {}
 
-    if prime_genre:
+    if prime_genre is not None:
         params['prime_genre__in'] = prime_genre.split(',')
 
     applications = Application.objects(**params).order_by('-n_citacoes')
