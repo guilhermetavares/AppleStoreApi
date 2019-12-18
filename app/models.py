@@ -1,5 +1,6 @@
 import mongoengine
 import os
+import json
 
 MONGO_HOST = os.environ.get('MONGO_HOST', None)
 MONGO_USER = os.environ.get('MONGO_USER', None)
@@ -22,3 +23,6 @@ class Application(mongoengine.Document):
     size_bytes = mongoengine.LongField()
     price = mongoengine.FloatField()
     n_citacoes = mongoengine.IntField()
+
+    def json(self):
+        return json.loads(self.to_json())

@@ -3,6 +3,7 @@ from starlette.responses import JSONResponse
 
 from schemas import Path
 from import_data import HelperImportClass
+from models import Application
 
 app = FastAPI()
 
@@ -28,3 +29,19 @@ def load_data(*, path: Path):
     return {
         'message': f'File import correctly for {path.path}',
     }
+
+
+@app.get("/genres/")
+def get_prime_genre(prime_genre: str = None, limit: int = None):
+
+    params = {}
+
+    if prime_genre:
+        params['prime_genre__in'] = prime_genre.split(',')
+
+    applications = Application.objects(**params).order_by('-n_citacoes')
+
+    if limit:
+        applications = applications[:limit]
+
+    return [application.json() for application in applications]
